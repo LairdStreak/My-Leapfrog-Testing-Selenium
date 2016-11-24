@@ -1,4 +1,5 @@
 var fs = require('fs')
+var fileList = require('./imageList.json')
 
 exports.clearDirectory = function (path) {
   console.log('here' + path)
@@ -7,9 +8,7 @@ exports.clearDirectory = function (path) {
 }
 
 function clearScreenshotDirectory (pathClean) {
-  var listfiletoDelete = ['login.png', 'daily2.png', 'daily-geo.png', 'daily-geothermal.png', 'daily-hydro.png', 'resources.png', 'resources_training.png']
-
-  listfiletoDelete.forEach(function (fileName) {
+  fileList.files.forEach(function (fileName) {
     var path = pathClean + fileName
     fs.unlink(path, (err) => {
       if (err) {
