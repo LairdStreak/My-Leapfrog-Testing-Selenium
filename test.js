@@ -69,7 +69,6 @@ function writeScreenshot (data, name) {
   fs.writeFileSync(screenshotPath + name, data, 'base64')
 }
 
-
 function testResources () {
   driver.get(testMain + '/resources')
   driver.wait(until.elementLocated(By.id('events')))
