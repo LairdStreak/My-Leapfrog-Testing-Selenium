@@ -18,6 +18,8 @@ cleaner.clearDirectory(screenshotPath)
 logIn()
 // test Resources Route
 testResources()
+// test support routes
+testSupport()
 // test payment routes
 testDaily()
 
@@ -74,6 +76,15 @@ function testResources () {
   driver.wait(until.elementLocated(By.id('training-events')))
   driver.takeScreenshot().then(function (data) {
     writeScreenshot(data, 'resources_training.png')
+  })
+}
+
+
+function testSupport () {
+  driver.get(testMain + '/support')
+  driver.wait(until.elementLocated(By.className('accordion-heading')))
+  driver.takeScreenshot().then(function (data) {
+    writeScreenshot(data, 'support.png')
   })
 }
 
