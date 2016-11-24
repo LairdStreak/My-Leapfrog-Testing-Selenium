@@ -4,7 +4,6 @@ var webdriver = require('selenium-webdriver')
 var By = webdriver.By
 var until = webdriver.until
 var promise = require('selenium-webdriver').promise
-var debug = require('debug')
 var fs = require('fs')
 const testMain = 'http://localhost:3000'
 const screenshotPath = 'C:\\selenium_local_map\\'
