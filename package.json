@@ -2,10 +2,10 @@
   "name": "testing",
   "version": "1.0.0",
   "description": "Test Suite",
-  "main": "test.js",
+  "main": "Main.js",
   "scripts": {
-    "test": "node test.js",
-    "dev": "node test.js"
+    "test": "node Main.js",
+    "dev": "node Main.js"
   },
   "author": "",
   "license": "ISC",
