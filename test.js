@@ -1,4 +1,5 @@
 var settings = require('./settings.json')
+var cleaner = require('./directoryCleaner.js')
 var webdriver = require('selenium-webdriver')
 var By = webdriver.By
 var until = webdriver.until
@@ -9,6 +10,8 @@ const testMain = 'http://localhost:3000'
 const screenshotPath = 'C:\\selenium_local_map\\'
 
 var driver = new webdriver.Builder().forBrowser('chrome').build()
+
+cleaner.clearDirectory()
 
 
 // clearScreenshotDirectory
