@@ -21,8 +21,6 @@ testResources()
 // test payment routes
 testDaily()
 
-
-
 function logIn () {
   driver.get('http://localhost:3002/login')
   driver.wait(until.elementLocated(By.id('login')))
@@ -34,6 +32,7 @@ function logIn () {
   driver.findElement(By.id('password')).sendKeys(settings.password)
   driver.findElement(By.id('login')).click()
 }
+
 
 function testDaily () {
   driver.get(testMain + '/licensing/daily')
@@ -61,14 +60,9 @@ function testDaily () {
   })
 }
 
-
-
-
-function writeScreenshot (data, name) {
-  name = name || 'ss.png'
-  fs.writeFileSync(screenshotPath + name, data, 'base64')
-}
-
+  /* -------------------------------------------------------------------------------------------
+  Code here to test resource uri's
+  ---------------------------------------------------------------------------------------------*/
 function testResources () {
   driver.get(testMain + '/resources')
   driver.wait(until.elementLocated(By.id('events')))
@@ -84,3 +78,8 @@ function testResources () {
 }
 
 driver.quit()
+
+function writeScreenshot (data, name) {
+  name = name || 'ss.png'
+  fs.writeFileSync(screenshotPath + name, data, 'base64')
+}
