@@ -20,6 +20,8 @@ logIn()
 testResources()
 // test support routes
 testSupport()
+// test testRequestaccess
+testRequestaccess()
 // test payment routes
 testDaily()
 
@@ -85,6 +87,21 @@ function testSupport () {
   driver.wait(until.elementLocated(By.className('accordion-heading')))
   driver.takeScreenshot().then(function (data) {
     writeScreenshot(data, 'support.png')
+  })
+
+  driver.get(testMain + '/support/new-request')
+  driver.wait(until.elementLocated(By.className('underline')))
+  driver.takeScreenshot().then(function (data) {
+    writeScreenshot(data, 'supportnew-request.png')
+  })
+}
+
+
+function testRequestaccess () {
+  driver.get(testMain + ' request-access')
+  driver.wait(until.elementLocated(By.className('underline')))
+  driver.takeScreenshot().then(function (data) {
+    writeScreenshot(data, 'request-access.png')
   })
 }
 
