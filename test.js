@@ -11,11 +11,10 @@ const screenshotPath = 'C:\\selenium_local_map\\'
 
 var driver = new webdriver.Builder().forBrowser('chrome').build()
 
-cleaner.clearDirectory()
+cleaner.clearDirectory(screenshotPath)
 
 
-// clearScreenshotDirectory
-clearScreenshotDirectory()
+
 // login
 logIn()
 // test Resources Route
@@ -63,18 +62,7 @@ function testDaily () {
   })
 }
 
-function clearScreenshotDirectory () {
-  // var loginPath = screenshotPath + 'login.png'
-  var listfiletoDelete = ['login.png', 'daily2.png', 'daily-geo.png', 'daily-geothermal.png', 'daily-hydro.png', 'resources.png', 'resources_training.png']
 
-  listfiletoDelete.forEach(function (fileName) {
-    var path = screenshotPath + fileName
-    fs.unlink(path, (err) => {
-      if (err) throw err
-      console.log('successfully deleted ' + path)
-    })
-  })
-}
 
 
 function writeScreenshot (data, name) {
