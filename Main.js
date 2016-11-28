@@ -23,6 +23,19 @@ testRequestaccess()
 // test payment routes
 testDaily()
 
+// finally
+logOut()
+
+
+
+function logOut () {
+  driver.get(testMain + '/logout')
+  driver.wait(until.elementLocated(By.id('login')))
+  driver.takeScreenshot().then(function (data) {
+    writeScreenshot(data, 'logout.png')
+  })
+}
+
 function logIn () {
   driver.get(settings.testuriLogin + '/login')
   driver.wait(until.elementLocated(By.id('login')))
@@ -40,7 +53,7 @@ function logIn () {
 
 function tesProfile () {
   driver.wait(until.elementLocated(By.className('status-bar')))
-  var elem = driver.findElement(webdriver.By.partialLinkText('UP'))
+  var elem = driver.findElement(By.partialLinkText('UP'))
   elem.click()
   driver.wait(until.elementLocated(By.partialLinkText('ch')))
   driver.takeScreenshot().then(function (data) {
@@ -118,6 +131,6 @@ function testRequestaccess () {
 driver.quit()
 
 function writeScreenshot (data, name) {
-  name = name || 'ss.png'
+  name = name || 'screeenshot.png'
   fs.writeFileSync(screenshotPath + name, data, 'base64')
 }
