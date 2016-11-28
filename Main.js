@@ -12,8 +12,6 @@ var driver = new webdriver.Builder().forBrowser('chrome').build()
 
 cleaner.clearDirectory(screenshotPath)
 
-
-
 // login
 logIn()
 // test Resources Route
@@ -39,8 +37,6 @@ function logIn () {
 
   tesProfile()
 }
-
-
 
 function tesProfile () {
   driver.wait(until.elementLocated(By.className('status-bar')))
