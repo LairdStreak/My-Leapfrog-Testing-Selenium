@@ -37,12 +37,12 @@ function logIn () {
   driver.findElement(By.id('login')).click()
 
 
-  test_By()
+  tesProfile()
 }
 
 
 
-function test_By () {
+function tesProfile () {
   driver.wait(until.elementLocated(By.className('status-bar')))
   var elem = driver.findElement(webdriver.By.partialLinkText('UP'))
   elem.click()
