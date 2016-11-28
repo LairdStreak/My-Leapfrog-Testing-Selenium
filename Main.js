@@ -98,7 +98,7 @@ function testSupport () {
 
 
 function testRequestaccess () {
-  driver.get(testMain + ' request-access')
+  driver.get(testMain + '/request-access')
   driver.wait(until.elementLocated(By.className('underline')))
   driver.takeScreenshot().then(function (data) {
     writeScreenshot(data, 'request-access.png')
