@@ -35,12 +35,26 @@ function logIn () {
   driver.findElement(By.id('email')).sendKeys(settings.username)
   driver.findElement(By.id('password')).sendKeys(settings.password)
   driver.findElement(By.id('login')).click()
+
+
+  test_By()
 }
 
 
+
+function test_By () {
+  driver.wait(until.elementLocated(By.className('status-bar')))
+  var elem = driver.findElement(webdriver.By.partialLinkText('UP'))
+  elem.click()
+  driver.wait(until.elementLocated(By.partialLinkText('ch')))
+  driver.takeScreenshot().then(function (data) {
+    writeScreenshot(data, 'profile.png')
+  })
+}
+
 function testDaily () {
   driver.get(testMain + '/licensing/daily')
-  driver.wait(until.elementLocated(By.className('float-right')))
+  driver.wait(until.elementLocated(webdriver.By.className('float-right')))
   driver.takeScreenshot().then(function (data) {
     writeScreenshot(data, 'daily2.png')
   })
