@@ -5,11 +5,15 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run" : "node main.js" 
+    "run": "node main.js",
+    "lint": "standard --verbose | snazzy"
   },
   "keywords": [
     "tests"
   ],
   "author": "Laird Streak",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.79.0"
+  }
 }
