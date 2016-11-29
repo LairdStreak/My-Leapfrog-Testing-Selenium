@@ -39,8 +39,6 @@ testDaily()
 // finally
 logOut()
 
-
-
 function logOut () {
   driver.get(testMain + '/logout')
   driver.wait(until.elementLocated(By.id('login')))
@@ -59,7 +57,6 @@ function logIn () {
   driver.findElement(By.id('email')).sendKeys(settings.username)
   driver.findElement(By.id('password')).sendKeys(settings.password)
   driver.findElement(By.id('login')).click()
-
 
   testProfile()
 }
@@ -102,7 +99,7 @@ function testDaily () {
 
   /* -------------------------------------------------------------------------------------------
   Code here to test resource uri's
-  ---------------------------------------------------------------------------------------------*/
+  --------------------------------------------------------------------------------------------- */
 function testResources () {
   driver.get(testMain + '/resources')
   driver.wait(until.elementLocated(By.id('events')))
@@ -117,7 +114,6 @@ function testResources () {
   })
 }
 
-
 function testSupport () {
   driver.get(testMain + '/support')
   driver.wait(until.elementLocated(By.className('accordion-heading')))
@@ -131,7 +127,6 @@ function testSupport () {
     writeScreenshot(data, 'supportnew-request.png')
   })
 }
-
 
 function testRequestaccess () {
   driver.get(testMain + '/request-access')
