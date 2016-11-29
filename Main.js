@@ -5,8 +5,21 @@ var By = webdriver.By
 var until = webdriver.until
 var promise = require('selenium-webdriver').promise
 var fs = require('fs')
-const testMain = settings.testuriMain
+var testMain = settings.testuriMain
+var testuriLogin = settings.testuriLogin
+
 const screenshotPath = 'C:\\selenium_local_map\\'
+
+var argValue = process.argv[2]
+if (argValue !== 'prod') {
+  testMain = testMain.replace('##', argValue)
+  testuriLogin = testMain.replace('##', argValue)
+} else {
+  testMain = testMain.replace('##-', '')
+  testuriLogin = testMain.replace('##-', '')
+}
+
+console.log(testMain)
 
 var driver = new webdriver.Builder().forBrowser('chrome').build()
 
@@ -37,7 +50,7 @@ function logOut () {
 }
 
 function logIn () {
-  driver.get(settings.testuriLogin + '/login')
+  driver.get(testuriLogin + '/login')
   driver.wait(until.elementLocated(By.id('login')))
   driver.takeScreenshot().then(function (data) {
     writeScreenshot(data, 'login.png')
@@ -48,10 +61,10 @@ function logIn () {
   driver.findElement(By.id('login')).click()
 
 
-  tesProfile()
+  testProfile()
 }
 
-function tesProfile () {
+function testProfile () {
   driver.wait(until.elementLocated(By.className('status-bar')))
   var elem = driver.findElement(By.partialLinkText('UP'))
   elem.click()

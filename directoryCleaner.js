@@ -2,7 +2,6 @@ var fs = require('fs')
 var fileList = require('./imageList.json')
 
 exports.clearDirectory = function (path) {
-  console.log('here' + path)
   clearScreenshotDirectory(path)
   return null
 }

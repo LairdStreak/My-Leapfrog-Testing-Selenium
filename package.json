@@ -4,8 +4,10 @@
   "description": "Test Suite",
   "main": "Main.js",
   "scripts": {
-    "test": "node Main.js",
-    "dev": "node Main.js"
+    "test": "node Main.js uat",
+    "dev": "node Main.js dev",
+    "prod": "node Main.js prod",
+    "lint": "standard --verbose | snazzy"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "chromedriver": "^2.12.0",
     "debug": "^2.3.3",
     "phantomjs": "^2.1.7",
-    "selenium-webdriver": "^2.44.0"
+    "selenium-webdriver": "^2.44.0",
+    "standard": "^8.6.0"
   }
 }
