@@ -5,9 +5,7 @@ const token = settings.token
 main()
 
 function main (){
-  //testCreateSoftLicence(testPath)
-  testObsoleteSoftLicence(testPath, 59355)
-  
+  testCreateSoftLicence(testPath)
 }
 
 function testCreateSoftLicence (path){
@@ -30,10 +28,10 @@ function testCreateSoftLicence (path){
 
 function callbackCreate(error, response, body) {
     if (!error && response.statusCode == 201) {
-        var info = JSON.parse(body);
-        console.log('License created ' + info.IxLicense)
+        console.log('License created ')
+        var info = body
+        console.log(info.IxLicense);
         testObsoleteSoftLicence (testPath, info.IxLicense)
-        console.log(info);
         console.log(info);
     } else {
         console.log(response.statusCode);
