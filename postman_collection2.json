@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "Test 1",
+			"name": "https://lap-aglsalestest3.leapfrog3d.com/favicon.ico",
 			"event": [
 				{
 					"listen": "test",
@@ -92,6 +92,51 @@
 					"mode": "raw",
 					"raw": "<DongleStatusRequest><DongleNumber>1860668512</DongleNumber><Product>LG10</Product><Build>16.4.1.6694</Build><Timezone>-05:00</Timezone><IncludeModules>true</IncludeModules></DongleStatusRequest>"
 				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://lap-aglsalestest3.leapfrog3d.com/robots.txt",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"User-agent: *\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://lap-aglsalestest3.leapfrog3d.com/robots.txt",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://lap-aglsalestest3.leapfrog3d.com/ProductUpdates/0.2/GetUpdateNotification/Geo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"4.0.0\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://lap-aglsalestest3.leapfrog3d.com/ProductUpdates/0.2/GetUpdateNotification/Geo",
+				"method": "POST",
+				"header": [],
+				"body": {},
 				"description": ""
 			},
 			"response": []
