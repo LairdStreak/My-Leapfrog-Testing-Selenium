@@ -54,9 +54,9 @@ function logIn () {
     writeScreenshot(data, 'login.png')
   })
 
-  driver.findElement(By.id('email')).sendKeys(settings.username)
+  driver.findElement(By.id('userName')).sendKeys(settings.username)
   driver.findElement(By.id('password')).sendKeys(settings.password)
-  driver.findElement(By.id('login')).click()
+  driver.findElement(By.className('btn btn-primary')).click()
 
   testProfile()
 }
