@@ -1,0 +1,82 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Get Version",
+		"_postman_id": "2d038c71-8a42-4829-01d2-1caf40f51859",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://licenses.aranzgeo.com/ProductUpdates/2.2/GetUpdateNotification/geo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"21\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://licenses.aranzgeo.com/ProductUpdates/2.2/GetUpdateNotification/works",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<CurrentVersionRequest beta_id=\"0\" license_id=\"eefafc4f-8199-425e-a7e4-54ded42c983d\"><UtcDateGathered day=\"27\" hour=\"2\" minute=\"26\" month=\"6\" second=\"15\" year=\"2017\" /><Product name=\"Works\" version=\"1.0.1\" /><OperatingSystem architecture=\"AMD64\" name=\"Windows 10 SP0\" /><CPU architecture=\"x64\" name=\"Intel(R) Core(TM) i5-6600 CPU @ 3.30GHz\" /><GraphicsInUse renderer=\"GeForce GTX 950/PCIe/SSE2\" vendor=\"NVIDIA Corporation\" /></CurrentVersionRequest>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://licenses.aranzgeo.com/ProductUpdates/0.2/GetUpdateNotification/works",
+			"request": {
+				"url": "http://licenses.aranzgeo.com/ProductUpdates/0.2/GetUpdateNotification/works",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<CurrentVersionRequest beta_id=\"90\" license_id=\"eefafc4f-8199-425e-a7e4-54ded42c983d\"><UtcDateGathered day=\"18\" hour=\"23\" minute=\"34\" month=\"6\" second=\"48\" year=\"2017\" /><Product name=\"Works\" version=\"0.1.0\" /><OperatingSystem architecture=\"AMD64\" name=\"Windows 10 SP0\" /><CPU architecture=\"x64\" name=\"Intel(R) Core(TM) i5-6600 CPU @ 3.30GHz\" /><GraphicsInUse renderer=\"GeForce GTX 950/PCIe/SSE2\" vendor=\"NVIDIA Corporation\" /></CurrentVersionRequest>"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://licenses.aranzgeo.com/ProductUpdates/0.2/GetUpdateNotification/Works",
+			"request": {
+				"url": "http://licenses.aranzgeo.com/ProductUpdates/0.2/GetUpdateNotification/Works",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<CurrentVersionRequest beta_id=\"0\" license_id=\"eefafc4f-8199-425e-a7e4-54ded42c983d\"><UtcDateGathered day=\"27\" hour=\"2\" minute=\"26\" month=\"6\" second=\"15\" year=\"2017\" /><Product name=\"Works\" version=\"1.0.1\" /><OperatingSystem architecture=\"AMD64\" name=\"Windows 10 SP0\" /><CPU architecture=\"x64\" name=\"Intel(R) Core(TM) i5-6600 CPU @ 3.30GHz\" /><GraphicsInUse renderer=\"GeForce GTX 950/PCIe/SSE2\" vendor=\"NVIDIA Corporation\" /></CurrentVersionRequest>"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
