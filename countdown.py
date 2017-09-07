@@ -23,15 +23,16 @@ def show_time():
 
 # Use tkinter lib for showing the clock
 root = Tk()
-root.attributes("-fullscreen", True)
+#root.attributes("-fullscreen", True)
+root.geometry("500x500")
 root.configure(background='black')
 root.bind("x", quit)
 root.after(1000, show_time)
 
 # Set the end date and time for the countdown
-endTime = datetime.datetime(2017, 9, 19, 9, 0, 0)
+endTime = datetime.datetime(2017, 9, 7, 16, 0, 0)
 
-fnt = font.Font(family='Helvetica', size=60, weight='bold')
+fnt = font.Font(family='Helvetica', size=30, weight='bold')
 txt = StringVar()
 lbl = ttk.Label(root, textvariable=txt, font=fnt, foreground="green", background="black")
 lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
